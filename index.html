@@ -3,18 +3,34 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Compaqbob.GitHub.io by compaqbob</title>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Matt Winkeler's Unit4 Coding Challenge</title>
+
 
   </head>
   <body>
-      Hello, World!
+     
+TODO: get user data
+TODO: display user data pretty
+TODO: interact with user data in new popup
+TODO: pretty stuff up a little bit
+
+
+<script type="text/javascript">
+      $.ajax({
+        url: 'https://randomuser.me/api/?results=10',
+        dataType: 'json',
+        success: function(data) {
+          console.log(data);
+          $(‘#result’).html(data.first );
+          $(‘#result2’).html(data.second );
+          $(‘#result3’).html(data.third);
+        }
+      });
+
+
+
+</script>
+
+
   </body>
 </html>
