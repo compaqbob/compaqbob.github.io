@@ -10,22 +10,28 @@
 
     <script type="text/javascript">
       $(function(){
-        $("#hide").click(function(){
-          $("ul").hide();
+        $("#clear").click(function(){
+          $("ul").remove();
         });
-        $("#show").click(function(){
+
+        $("#get").click(function(){
           $("ul").show();
+          //get new results
+          $.ajax({
+            url: 'https://randomuser.me/api/?results=10',
+            dataType: 'json',
+            success: function(results) {
+              console.log(results);
+            }
+          });
+        });
+
+        $("#ul").click(function(){
+          alert("Person Information");
         });
 
 
-         $.ajax({
-          url: 'https://randomuser.me/api/?results=10',
-          dataType: 'json',
-          success: function(results) {
-           console.log(results);
-
-          }
-        });
+         
       });
 
 
@@ -51,8 +57,8 @@ TODO: pretty stuff up a little bit
       <li id="li10">10</li>
     </ul>
 
-    <button id="hide">Hide</button>
-    <button id="show">Show</button>
+    <button id="clear">Clear</button>
+    <button id="get">Get (New)</button>
 
 
   </body>
