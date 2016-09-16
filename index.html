@@ -28,12 +28,12 @@
           {
             url: 'https://randomuser.me/api/?results=10',
             dataType: 'json',
-            success: function(results) 
+            success: function(data) 
             {
-              console.log(results);
+              console.log(data);
             }
           });
-          obj = JSON.parse(results);
+          obj = JSON.parse(data);
           document.getelementbyid("div").innerhtml = obj.results[1].cell
         });
 
