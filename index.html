@@ -10,6 +10,13 @@
 
     <script type="text/javascript">
       $(function(){
+        $("#hide").click(function(){
+          $("ul").hide();
+        });
+        $("#show").click(function(){
+          $("ul").show();
+        });
+
 
          $.ajax({
           url: 'https://randomuser.me/api/?results=10',
@@ -44,6 +51,8 @@ TODO: pretty stuff up a little bit
       <li id="li10">10</li>
     </ul>
 
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
 
 
   </body>
