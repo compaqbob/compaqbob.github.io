@@ -4,8 +4,25 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Matt Winkeler's Unit4 Coding Challenge</title>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css"></script>
+
+    <script type="text/javascript">
+      $(function(){
+
+         $.ajax({
+          url: 'https://randomuser.me/api/?results=10',
+          dataType: 'json',
+          success: function(results) {
+           console.log(results);
+
+          }
+        });
+      });
 
 
+    </script>
   </head>
   <body>
      
@@ -14,22 +31,19 @@ TODO: display user data pretty
 TODO: interact with user data in new popup
 TODO: pretty stuff up a little bit
 
+    <ul>
+      <li id="li1">1</li>
+      <li id="li2">2</li>
+      <li id="li3">3</li>
+      <li id="li4">4</li>
+      <li id="li5">5</li>
+      <li id="li6">6</li>
+      <li id="li7">7</li>
+      <li id="li8">8</li>
+      <li id="li9">9</li>
+      <li id="li10">10</li>
+    </ul>
 
-<script type="text/javascript">
-      $.ajax({
-        url: 'https://randomuser.me/api/?results=10',
-        dataType: 'json',
-        success: function(results) {
-          console.log(results);
-          $(‘#result’).html(results.gender );
-          $(‘#result2’).html(data.second );
-          $(‘#result3’).html(data.third);
-        }
-      });
-
-
-
-</script>
 
 
   </body>
