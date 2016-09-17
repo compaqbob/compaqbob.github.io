@@ -48,7 +48,6 @@
               //let's display a few items
               for (var i=0;i<data.results.length;++i)
               {
-                  //console.log(data.results[i].cell)
                   $('#div').append('<div class="cell"> <img src="'+data.results[i].picture.thumbnail+'" /> '+data.results[i].name.first+' '+data.results[i].name.last+'</>');
               }
             }
@@ -73,7 +72,7 @@
 <br />TODO: display user data pretty
 <br />TODO: interact with user data in new popup
 <br />TODO: pretty stuff up a little bit
-
+<br />
 
     <button id="clear">Clear</button>
     <button id="get">Get (New)</button>
