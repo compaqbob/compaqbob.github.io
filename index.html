@@ -41,9 +41,10 @@
               //now json variable contains data in json format
               //let's display a few items
               console.log(data.length);
-              for (var i=0;i<data.length;++i)
+              for (var i=0;i<data.results.length;++i)
               {
-                  $('#div').append('<div class="cell">'+data[i].cell+'</>');
+                  console.log(data.results[i].cell)
+                  //$('#div').append('<div class="cell">'+data[i].results+'</>');
               }
             }
             
