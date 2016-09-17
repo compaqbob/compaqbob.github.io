@@ -9,6 +9,7 @@
     <link type="text/css" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css" rel="stylesheet" />
 
     <script type="text/javascript">
+      var obj
       $(function()
       {
         $("#clear").click(function()
@@ -25,7 +26,6 @@
           //parse results
           //display results
           var data
-          var obj
           $.ajax(
           {
             url: 'https://randomuser.me/api/?results=10',
