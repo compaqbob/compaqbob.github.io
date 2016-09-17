@@ -9,7 +9,7 @@
     <link type="text/css" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css" rel="stylesheet" />
 
     <style>
-      div
+      .cell
       {
         background-color: yellow;
       }
@@ -23,18 +23,12 @@
       {
         $("#clear").click(function()
         {
-          $("ul").hide();
+          $("#cell").hide();
         });
 
         $("#get").click(function()
         {
-          $("ul").show();
-          //if old results, dump them
-
-          //get results
-          //parse results
-          //display results
-          
+          $("#cell").show();          
           $.ajax(
           {
             url: 'https://randomuser.me/api/?results=10',
@@ -46,13 +40,13 @@
               //let's display a few items
               for (var i=0;i<data.results.length;++i)
               {
-                  $('#div').append('<div class="cell"> <img src="'+data.results[i].picture.thumbnail+'" /> '+data.results[i].name.first+' '+data.results[i].name.last+'</>');
+                  $('#list').append('<div class="cell"> <img src="'+data.results[i].picture.thumbnail+'" /> '+data.results[i].name.first+' '+data.results[i].name.last+'</div>');
               }
             }
           });
         });
 
-        $("#cell").click(function()
+        $(".cell").click(function()
         {
           alert("Person Information");
         });
@@ -66,12 +60,13 @@
   </head>
   <body>
      
-<br />TODO: get user data
-<br />TODO: display user data pretty
-<br />TODO: interact with user data in new popup
-<br />TODO: pretty stuff up a little bit
-<br />
-    <div id='div'></div>
+    <br />TODO: get user data
+    <br />TODO: display user data pretty
+    <br />TODO: interact with user data in new popup
+    <br />TODO: pretty stuff up a little bit
+    <br />
+
+    <div id='list'></div>
     <button id="clear">Clear</button>
     <button id="get">Get (New)</button>
 
