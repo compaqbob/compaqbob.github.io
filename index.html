@@ -36,11 +36,12 @@
             {
               console.log(data);
               obj = JSON.parse(data);
+              console.log(obj);
             }
             
           });
           
-          document.getelementbyid("div").innerhtml = obj.data[1].cell;
+          //document.getelementbyid("div").innerhtml = obj.data[1].cell;
         });
 
         $("#ul").click(function()
