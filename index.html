@@ -9,7 +9,7 @@
     <link type="text/css" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css" rel="stylesheet" />
 
     <style>
-      cell 
+      div 
       {
         margin-left: 40px;
         margin-top: 10px;
@@ -52,10 +52,7 @@
                   $('#div').append('<div class="cell"> <img src="'+data.results[i].picture.thumbnail+'" /> '+data.results[i].name.first+' '+data.results[i].name.last+'</>');
               }
             }
-            
           });
-          
-          //document.getelementbyid("div").innerhtml = obj.data[1].cell;
         });
 
         $("#cell").click(function()
@@ -72,12 +69,11 @@
   </head>
   <body>
      
-TODO: get user data
-TODO: display user data pretty
-TODO: interact with user data in new popup
-TODO: pretty stuff up a little bit
-    <div id="div">
-    </div>
+<br />TODO: get user data
+<br />TODO: display user data pretty
+<br />TODO: interact with user data in new popup
+<br />TODO: pretty stuff up a little bit
+
 
     <button id="clear">Clear</button>
     <button id="get">Get (New)</button>
