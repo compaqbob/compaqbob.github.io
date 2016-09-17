@@ -32,9 +32,10 @@
             {
               console.log(data);
             }
+            obj = JSON.parse(data);
+            document.getelementbyid("div").innerhtml = obj.results[1].cell
           });
-          obj = JSON.parse(data);
-          document.getelementbyid("div").innerhtml = obj.results[1].cell
+          
         });
 
         $("#ul").click(function()
