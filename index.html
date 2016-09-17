@@ -43,8 +43,8 @@
               console.log(data.length);
               for (var i=0;i<data.results.length;++i)
               {
-                  console.log(data.results[i].cell)
-                  $('#div').append('<div class="cell">'+data.results[i]+'</>');
+                  //console.log(data.results[i].cell)
+                  $('#div').append('<div class="cell">'+data.results[i].name.first+' '+data.results[i].name.last+'</>');
               }
             }
             
