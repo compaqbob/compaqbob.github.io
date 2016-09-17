@@ -24,6 +24,7 @@
           //get results
           //parse results
           //display results
+          var data
           $.ajax(
           {
             url: 'https://randomuser.me/api/?results=10',
@@ -32,10 +33,10 @@
             {
               console.log(data);
             }
-            obj = JSON.parse(data);
-            document.getelementbyid("div").innerhtml = obj.results[1].cell
+            
           });
-          
+          obj = JSON.parse(data);
+          document.getelementbyid("div").innerhtml = obj.results[1].cell
         });
 
         $("#ul").click(function()
