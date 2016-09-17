@@ -37,13 +37,13 @@
               console.log(data);
               //obj = JSON.parse(data);
               //console.log(obj);
-              $.each(data, function(index, element) 
+              var json = $.parseJSON(data);
+              //now json variable contains data in json format
+              //let's display a few items
+              for (var i=0;i<json.length;++i)
               {
-                $('body').append($('<div>', 
-                {
-                  text: element.name
-                }));
-              });
+                  $('#results').append('<div class="name">'+json[i].name+'</>');
+              }
             }
             
           });
