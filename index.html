@@ -13,6 +13,11 @@
       {
         background-color: yellow;
       }
+      .list
+      {
+        align-self: center;
+        width: 50%;
+      }
     </style>
 
     <script type="text/javascript">
@@ -50,7 +55,10 @@
         {
           alert("Person Information");
         });
-
+        
+        $(".cell").on("click", "div.cell", function(){
+          alert($(this).text());
+        });
 
          
       });
