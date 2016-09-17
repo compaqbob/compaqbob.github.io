@@ -8,6 +8,15 @@
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
     <link type="text/css" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css" rel="stylesheet" />
 
+    <style>
+      cell 
+      {
+        margin-left: 40px;
+        margin-top: 10px;
+        background-color: yellow;
+      }
+    </style>
+
     <script type="text/javascript">
       var obj;
       var data;
@@ -35,12 +44,8 @@
             success: function(data) 
             {
               console.log(data);
-              //obj = JSON.parse(data);
-              //console.log(obj);
-              //var json = $.parseJSON(data);
               //now json variable contains data in json format
               //let's display a few items
-              console.log(data.length);
               for (var i=0;i<data.results.length;++i)
               {
                   //console.log(data.results[i].cell)
@@ -53,7 +58,7 @@
           //document.getelementbyid("div").innerhtml = obj.data[1].cell;
         });
 
-        $("#li").click(function()
+        $("#cell").click(function()
         {
           alert("Person Information");
         });
@@ -72,18 +77,6 @@ TODO: display user data pretty
 TODO: interact with user data in new popup
 TODO: pretty stuff up a little bit
     <div id="div">
-      <ul id="list">
-        <li id="li1">1</li>
-        <li id="li2">2</li>
-        <li id="li3">3</li>
-        <li id="li4">4</li>
-        <li id="li5">5</li>
-        <li id="li6">6</li>
-        <li id="li7">7</li>
-        <li id="li8">8</li>
-        <li id="li9">9</li>
-        <li id="li10">10</li>
-      </ul>
     </div>
 
     <button id="clear">Clear</button>
