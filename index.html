@@ -58,7 +58,7 @@
         
         $(document).on('click', 'div.cell', function(){
           //alert('Yay!');
-          alert($('div.cell',this).text);
+          alert($(this).find('div.cell').text);
         });
 
          
