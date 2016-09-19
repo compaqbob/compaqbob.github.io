@@ -45,7 +45,7 @@
               //let's display a few items
               for (var i=0;i<data.results.length;++i)
               {
-                  $('#list').append('<div class="cell" id="'+data.results[i].login.md5+'"><img src="'+data.results[i].picture.thumbnail+'" />'+data.results[i].name.first+' '+data.results[i].name.last+'<br />'+data.results[i].location.city+', '+data.results[i].location.state+'<div></div></div>');
+                  $('#list').append('<a href="#myPopup-'+i+'" data-rel="popup"><div class="cell" id="cell-'+i+'"><img src="'+data.results[i].picture.thumbnail+'" />'+data.results[i].name.first+' '+data.results[i].name.last+'<br />'+data.results[i].location.city+', '+data.results[i].location.state+'<div data-overlay-theme="a" data-position-to="window" data-role="popup" id="myPopup-'+i+'" class="ui-content">Hello!</div></div></a>');
               }
             }
           });
@@ -68,17 +68,6 @@
     </script>
   </head>
   <body>
-     
-    <br />TODO: get user data
-    <br />TODO: display user data pretty
-    <br />TODO: interact with user data in new popup
-    <br />TODO: pretty stuff up a little bit
-    <br />
-
-    <div id='list'></div>
-    <button id="clear">Clear</button>
-    <button id="get">Get (New)</button>
-
     <!--<div id="pageone" data-role="main" class="ui-content">
       <p>Click on the image to enlarge it.</p>
       <p>Notice the dark overlay.</p>
@@ -97,6 +86,18 @@
     DOB
     Email
     Full location
+     
+    <br />TODO: get user data
+    <br />TODO: display user data pretty
+    <br />TODO: interact with user data in new popup
+    <br />TODO: pretty stuff up a little bit
+    <br />
+
+    <div id='list'></div>
+    <button id="clear">Clear</button>
+    <button id="get">Get (New)</button>
+
+
 
   </body>
 </html>
