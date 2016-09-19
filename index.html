@@ -45,24 +45,41 @@
               //let's display a few items
               for (var i=0;i<data.results.length;++i)
               {
-                  $('#list').append('<a href="#myPopup-'+i+'" data-rel="popup"><div class="cell" id="cell-'+i+'"><img src="'+data.results[i].picture.thumbnail+'" />'+data.results[i].name.first+' '+data.results[i].name.last+'<br />'+data.results[i].location.city+', '+data.results[i].location.state+'<div data-overlay-theme="a" data-position-to="window" data-role="popup" id="myPopup-'+i+'" class="ui-content">Hello!</div></div></a>');
+                  $('#list').append('<div class="cell" id="cell-'+i+'"><img src="'+data.results[i].picture.thumbnail+'" />'+data.results[i].name.title+' '+data.results[i].name.first+' '+data.results[i].name.last+'<br />'+data.results[i].location.city+', '+data.results[i].location.state+'</div><div id="dialog-'+i+'" title="'+data.results[i].name.title+' '+data.results[i].name.first+' '+data.results[i].name.last+'">'+data.results[i].dob+'</div>');
+                  //<a href="#myPopup-'+i+'" data-rel="popup"></a>
               }
             }
           });
         });
-
+        $( "#dialog-1" ).dialog(
+        {
+          autoOpen: false, 
+          modal: true,
+          buttons: 
+          {
+            OK: function() {$(this).dialog("close");}
+          },
+        });
+        $( "#opener-1" ).click(function() 
+        {
+          $( "#dialog-1" ).dialog( "open" );
+        });
+      });
         //$(".cell").click(function()
         //{
         //  alert("Person Information");
         //});
         
-        $(document).on('click', 'div.cell', function(){
+        //$(document).on('click', 'div.cell', function(){
           //alert('Yay!');
-          alert($(this).find('div.cell').html());
-        });
+         // alert($(this).find('div.cell').html());
+        //});
 
          
-      });
+      
+      $(function() {
+            
+         });
 
 
     </script>
@@ -81,11 +98,14 @@
       </div>
     </div> -->
 
-    Gender
-    Cell
-    DOB
-    Email
+    Gender data.results[i].gender
+    Cell data.results[i].cell
+    DOB data.results[i].dob
+    Email data.results[i].email
     Full location
+    data.results[i].location.street, data.results[i].location.city, data.results[i].location.state, data.results[i].postcode
+
+    data.results[i].picture.large
      
     <br />TODO: get user data
     <br />TODO: display user data pretty
