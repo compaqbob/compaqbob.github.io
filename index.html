@@ -45,7 +45,7 @@
               //let's display a few items
               for (var i=0;i<data.results.length;++i)
               {
-                  $('#list').append('<div class="cell" id="'+data.results[i].login.md5+'"><img src="'+data.results[i].picture.thumbnail+'" />'+data.results[i].name.first+' '+data.results[i].name.last+'</div>');
+                  $('#list').append('<div class="cell" id="'+data.results[i].login.md5+'"><img src="'+data.results[i].picture.thumbnail+'" />'+data.results[i].name.first+' '+data.results[i].name.last+'<br />'+data.results[i].location.city+', '+data.results.location.state+'<div></div></div>');
               }
             }
           });
@@ -56,7 +56,7 @@
         //  alert("Person Information");
         //});
         
-        $('div.cell').on('click', function(){
+        $(document).on('click', 'div.cell', function(){
           //alert('Yay!');
           alert($(this).find('div.cell').html());
         });
@@ -79,6 +79,24 @@
     <button id="clear">Clear</button>
     <button id="get">Get (New)</button>
 
+    <!--<div id="pageone" data-role="main" class="ui-content">
+      <p>Click on the image to enlarge it.</p>
+      <p>Notice the dark overlay.</p>
+      <a href="#myPopup" data-rel="popup" data-position-to="window">
+        <img src="skaret.jpg" alt="Skaret View" style="width:200px;">
+      </a>
+
+      <div data-role="popup" id="myPopup" data-overlay-theme="b">
+        <p>This is my picture!</p>
+        <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="skaret.jpg" style="width:800px;height:400px;" alt="Skaret View">
+      </div>
+    </div> -->
+
+    Gender
+    Cell
+    DOB
+    Email
+    Full location
 
   </body>
 </html>
