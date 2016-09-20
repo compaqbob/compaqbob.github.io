@@ -21,7 +21,6 @@
       }
       .info
       {
-        width: 300px;
         border: 1px solid green;
         float:left;
       }
@@ -50,7 +49,6 @@
       {
         $("#get").click(function()
         {
-          $("#cell").show(); 
           //get the data         
           $.ajax(
           {
@@ -92,6 +90,7 @@
             }
           });
         });
+        $("#cell").show(); 
       });
       function showDetail(index)
       {
@@ -128,10 +127,11 @@
     </script>
   </head>
   <body>
-
-    <div id='list'></div>
-    <button id="clear">Clear</button>
+    <h3>Unit 4 Coding Challenge</h3>
     <button id="get">Get (New)</button>
+    <br />
+    <div id='list'></div>
+    
 
   </body>
 </html>
