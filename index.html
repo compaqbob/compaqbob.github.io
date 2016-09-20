@@ -39,7 +39,7 @@
               //display the items
               for (var i=0;i<data.results.length;++i)
               {
-                var html = '<div onclick="showDetail('+i+')" class="cell" id="cell-'+i+'">';
+                var html = '<div onclick="showDetail('+i+','+data+')" class="cell" id="cell-'+i+'">';
                 html += '<div class="picture">';
                 html += '<img src="'+data.results[i].picture.thumbnail+'" />';
                 html += '</div>'
@@ -57,7 +57,7 @@
           });
         });
       });
-      function showDetail(index)
+      function showDetail(index, data)
       {
         //here I extract the index from the results I got from the AJAX call
         //I create some dynamic HTML here for the dialog
