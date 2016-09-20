@@ -11,7 +11,6 @@
     <style>
       .cell
       {
-        background-color: yellow;
       }
       .list
       {
@@ -21,50 +20,69 @@
     </style>
 
     <script type="text/javascript">
-      var obj;
       var data;
 
-      $(function()
+      $(document).ready(function()
       {
-        $("#clear").click(function()
-        {
-          $("#cell").hide();
-        });
-
         $("#get").click(function()
         {
-          $("#cell").show();          
+          $("#cell").show(); 
+          //get the data         
           $.ajax(
           {
             url: 'https://randomuser.me/api/?results=10',
             dataType: 'json',
             success: function(data) 
             {
+              //log the data to the console
               console.log(data);
-              //now json variable contains data in json format
-              //let's display a few items
+              //display the items
               for (var i=0;i<data.results.length;++i)
               {
-                  $('#list').append('<div class="cell" id="cell-'+i+'"><img src="'+data.results[i].picture.thumbnail+'" />'+data.results[i].name.title+' '+data.results[i].name.first+' '+data.results[i].name.last+'<br />'+data.results[i].location.city+', '+data.results[i].location.state+'</div><div id="dialog-'+i+'" title="'+data.results[i].name.title+' '+data.results[i].name.first+' '+data.results[i].name.last+'">'+data.results[i].dob+'</div>');
-                  //<a href="#myPopup-'+i+'" data-rel="popup"></a>
+                var html = '<div onclick="showDetail('+i+')" class="cell" id="cell-'+i+'">';
+                html += '<div class="picture">';
+                html += '<img src="'+data.results[i].picture.thumbnail+'" />';
+                html += '</div>'
+                html += '<div class = info>'
+                html += data.results[i].name.title+' '+data.results[i].name.first+' '+data.results[i].name.last;
+                html += '<br />';
+                html += data.results[i].location.city+', '+data.results[i].location.state;
+                html += '</div>';
+                html += '</div>';
+
+                $('#list').append(html);
+               //<a href="#myPopup-'+i+'" data-rel="popup"></a>
               }
             }
           });
         });
-        $( "#dialog-1" ).dialog(
+
+        function showDetail(index)
         {
-          autoOpen: false, 
-          modal: true,
-          buttons: 
-          {
-            OK: function() {$(this).dialog("close");}
-          },
-        });
-        $( "#opener-1" ).click(function() 
-        {
-          $( "#dialog-1" ).dialog( "open" );
-        });
-      });
+          //here I extract the index from the results I got from the AJAX call
+          //I create some dynamic HTML here for the dialog
+          var i = index;
+          var name = data.results[i].name.title+' '+data.results[i].name.first+' '+data.results[i].name.last;
+          var location = data.results[i].location.street+'<br />'+data.results[i].location.city+', '+data.results.[i].location.state;
+          var dob = data.results[i].dob;
+          var gender = data.results[i].gender;
+          var cell = data.results[i].cell;
+          var email = data.results[i].email;
+
+          var html = '<div class="picture">';
+          html += '<img src="'+data.results[i].picture.large+'" />';
+          html += '</div>';
+          html += '<div class = info>';
+          html += '<b>Gender:</b> '+gender+'<br />';
+          html += '<b>Cell:</b> '+gender+'<br />';
+          html += '<b>DOB:</b> '+gender+'<br />';
+          html += '<b>Email:</b> '+gender+'<br /><br />';
+          html += '<b>Location:</b><br />'+data.results[i].location.street+'<br />'+data.results[i].location.city+', '+data.results[i].location.state+'<br />';
+          html += '</div>';
+    
+          $('<div />').html(html).dialog({ title: name, modal: true, width: 500, height: 300 });
+        }
+
         //$(".cell").click(function()
         //{
         //  alert("Person Information");
@@ -74,13 +92,6 @@
           //alert('Yay!');
          // alert($(this).find('div.cell').html());
         //});
-
-         
-      
-      $(function() {
-            
-         });
-
 
     </script>
   </head>
@@ -111,7 +122,7 @@
     <br />TODO: display user data pretty
     <br />TODO: interact with user data in new popup
     <br />TODO: pretty stuff up a little bit
-    <br /><button id="opener-1">Open me!</button>
+    <br />
 
     <div id='list'></div>
     <button id="clear">Clear</button>
