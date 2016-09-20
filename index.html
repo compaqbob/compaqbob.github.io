@@ -21,6 +21,16 @@
 
     <script type="text/javascript">
       var data = {};
+      var names =[];
+      var smallpictures = [];
+      var largepictures = [];
+      var streets = [];
+      var cities = [];
+      var states = [];
+      var cells = [];
+      var emails = [];
+      var dobs = [];
+      var genders = [];
 
       $(document).ready(function()
       {
@@ -36,6 +46,19 @@
             {
               //log the data to the console
               console.log(data);
+              for (var i=0;i<data.results.length;++i)
+              {
+                names[i] = data.results[i].name.title+' '+data.results[i].name.first+' '+data.results[i].name.last;
+                smallpictures[i] = data.results[i].picture.thumbnail;
+                largepictures[i] = data.results[i].picture.large;
+                streets[i] = data.results[i].location.street;
+                cities[i] = data.results[i].location.city;
+                states[i] = data.results[i].location.state;
+                cells[i] = data.results[i].cell;
+                emails[i] = data.results[i].email;
+                dobs[i] = data.results[i].dob;
+                genders[i] = data.results[i].gender;
+              }
               //display the items
               for (var i=0;i<data.results.length;++i)
               {
@@ -63,24 +86,24 @@
         //here I extract the index from the results I got from the AJAX call
         //I create some dynamic HTML here for the dialog
         var i = index;
-        var name = data.results[i].name.title+' '+data.results[i].name.first+' '+data.results[i].name.last;
-        var location = data.results[i].location.street+'<br />'+data.results[i].location.city+', '+data.results[i].location.state;
-        var dob = data.results[i].dob;
-        var gender = data.results[i].gender;
-        var cell = data.results[i].cell;
-        var email = data.results[i].email;
+        var name = names[i];
+        var location = streets[i]+'<br />'+cities[i]+', '+states[i];
+        var dob = dobs[i];
+        var gender = genders[i];
+        var cell = cells[i];
+        var email = emails[i];
 
         alert('Variables complete');
 
         var html = '<div class="picture">';
-        html += '<img src="'+data.results[i].picture.large+'" />';
+        html += '<img src="'+largepictures[i]+'" />';
         html += '</div>';
         html += '<div class = info>';
         html += '<b>Gender:</b> '+gender+'<br />';
         html += '<b>Cell:</b> '+cell+'<br />';
         html += '<b>DOB:</b> '+dob+'<br />';
         html += '<b>Email:</b> '+email+'<br /><br />';
-        html += '<b>Location:</b><br />'+data.results[i].location.street+'<br />'+data.results[i].location.city+', '+data.results[i].location.state+'<br />';
+        html += '<b>Location:</b><br />'+streets[i]+'<br />'+cities[i]+', '+states[i]+'<br />';
         html += '</div>';
 
         alert('HTML complete');
