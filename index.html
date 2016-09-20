@@ -59,6 +59,7 @@
       });
       function showDetail(index, data)
       {
+        alert('Made it to the function');
         //here I extract the index from the results I got from the AJAX call
         //I create some dynamic HTML here for the dialog
         var i = index;
@@ -69,16 +70,20 @@
         var cell = data.results[i].cell;
         var email = data.results[i].email;
 
+        alert('Variables complete');
+
         var html = '<div class="picture">';
         html += '<img src="'+data.results[i].picture.large+'" />';
         html += '</div>';
         html += '<div class = info>';
         html += '<b>Gender:</b> '+gender+'<br />';
-        html += '<b>Cell:</b> '+gender+'<br />';
-        html += '<b>DOB:</b> '+gender+'<br />';
-        html += '<b>Email:</b> '+gender+'<br /><br />';
+        html += '<b>Cell:</b> '+cell+'<br />';
+        html += '<b>DOB:</b> '+dob+'<br />';
+        html += '<b>Email:</b> '+email+'<br /><br />';
         html += '<b>Location:</b><br />'+data.results[i].location.street+'<br />'+data.results[i].location.city+', '+data.results[i].location.state+'<br />';
         html += '</div>';
+
+        alert('HTML complete');
   
         $('<div />').html(html).dialog({ title: name, modal: true, width: 500, height: 300 });
       }
