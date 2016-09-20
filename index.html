@@ -11,11 +11,19 @@
     <style>
       .cell
       {
+        width: 500px;
+        border: 1px solid black;
+        overflow: hidden;
       }
       .list
       {
-        align-self: center;
-        width: 50%;
+        width: 500px;
+      }
+      .picture
+      {
+        width: 300px;
+        float:left; /* add this */
+        border: 1px solid red;
       }
     </style>
 
@@ -74,7 +82,6 @@
                 html += '</div>';
 
                 $('#list').append(html);
-               //<a href="#myPopup-'+i+'" data-rel="popup"></a>
               }
             }
           });
@@ -95,7 +102,8 @@
 
         alert('Variables complete');
 
-        var html = '<div class="picture">';
+        var html = '<div class="window" id="window-'+i+'">'
+        html += '<div class="picture">';
         html += '<img src="'+largepictures[i]+'" />';
         html += '</div>';
         html += '<div class = info>';
@@ -103,48 +111,17 @@
         html += '<b>Cell:</b> '+cell+'<br />';
         html += '<b>DOB:</b> '+dob+'<br />';
         html += '<b>Email:</b> '+email+'<br /><br />';
-        html += '<b>Location:</b><br />'+streets[i]+'<br />'+cities[i]+', '+states[i]+'<br />';
+        html += '<b>Location:</b><br />'+location+'<br />';
+        html += '</div>';
         html += '</div>';
 
         alert('HTML complete');
   
         $('<div />').html(html).dialog({ title: name, modal: true, width: 500, height: 300 });
       }
-
-        //$(".cell").click(function()
-        //{
-        //  alert("Person Information");
-        //});
-        
-        //$(document).on('click', 'div.cell', function(){
-          //alert('Yay!');
-         // alert($(this).find('div.cell').html());
-        //});
-
     </script>
   </head>
   <body>
-    <!--<div id="pageone" data-role="main" class="ui-content">
-      <p>Click on the image to enlarge it.</p>
-      <p>Notice the dark overlay.</p>
-      <a href="#myPopup" data-rel="popup" data-position-to="window">
-        <img src="skaret.jpg" alt="Skaret View" style="width:200px;">
-      </a>
-
-      <div data-role="popup" id="myPopup" data-overlay-theme="b">
-        <p>This is my picture!</p>
-        <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="skaret.jpg" style="width:800px;height:400px;" alt="Skaret View">
-      </div>
-    </div> -->
-
-    Gender data.results[i].gender
-    Cell data.results[i].cell
-    DOB data.results[i].dob
-    Email data.results[i].email
-    Full location
-    data.results[i].location.street, data.results[i].location.city, data.results[i].location.state, data.results[i].postcode
-
-    data.results[i].picture.large
      
     <br />TODO: get user data
     <br />TODO: display user data pretty
@@ -155,8 +132,6 @@
     <div id='list'></div>
     <button id="clear">Clear</button>
     <button id="get">Get (New)</button>
-
-
 
   </body>
 </html>
