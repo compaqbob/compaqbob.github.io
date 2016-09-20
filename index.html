@@ -9,20 +9,27 @@
     <link type="text/css" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css" rel="stylesheet" />
 
     <style>
+      .list
+      {
+        width: 500px;
+        align-content: center;
+      }
       .cell
       {
         width: 500px;
         border: 1px solid black;
         overflow: hidden;
       }
-      .list
+      .info
       {
-        width: 500px;
+        width: 400px;
+        border: 1px solid green;
+        overflow: hidden;
       }
       .picture
       {
-        width: 300px;
-        float:left; /* add this */
+        width: 100px;
+        float:left;
         border: 1px solid red;
       }
     </style>
@@ -122,12 +129,6 @@
     </script>
   </head>
   <body>
-     
-    <br />TODO: get user data
-    <br />TODO: display user data pretty
-    <br />TODO: interact with user data in new popup
-    <br />TODO: pretty stuff up a little bit
-    <br />
 
     <div id='list'></div>
     <button id="clear">Clear</button>
