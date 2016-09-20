@@ -56,32 +56,32 @@
             }
           });
         });
+      });
+      function showDetail(index)
+      {
+        //here I extract the index from the results I got from the AJAX call
+        //I create some dynamic HTML here for the dialog
+        var i = index;
+        var name = data.results[i].name.title+' '+data.results[i].name.first+' '+data.results[i].name.last;
+        var location = data.results[i].location.street+'<br />'+data.results[i].location.city+', '+data.results[i].location.state;
+        var dob = data.results[i].dob;
+        var gender = data.results[i].gender;
+        var cell = data.results[i].cell;
+        var email = data.results[i].email;
 
-        function showDetail(index)
-        {
-          //here I extract the index from the results I got from the AJAX call
-          //I create some dynamic HTML here for the dialog
-          var i = index;
-          var name = data.results[i].name.title+' '+data.results[i].name.first+' '+data.results[i].name.last;
-          var location = data.results[i].location.street+'<br />'+data.results[i].location.city+', '+data.results[i].location.state;
-          var dob = data.results[i].dob;
-          var gender = data.results[i].gender;
-          var cell = data.results[i].cell;
-          var email = data.results[i].email;
-
-          var html = '<div class="picture">';
-          html += '<img src="'+data.results[i].picture.large+'" />';
-          html += '</div>';
-          html += '<div class = info>';
-          html += '<b>Gender:</b> '+gender+'<br />';
-          html += '<b>Cell:</b> '+gender+'<br />';
-          html += '<b>DOB:</b> '+gender+'<br />';
-          html += '<b>Email:</b> '+gender+'<br /><br />';
-          html += '<b>Location:</b><br />'+data.results[i].location.street+'<br />'+data.results[i].location.city+', '+data.results[i].location.state+'<br />';
-          html += '</div>';
-    
-          $('<div />').html(html).dialog({ title: name, modal: true, width: 500, height: 300 });
-        };
+        var html = '<div class="picture">';
+        html += '<img src="'+data.results[i].picture.large+'" />';
+        html += '</div>';
+        html += '<div class = info>';
+        html += '<b>Gender:</b> '+gender+'<br />';
+        html += '<b>Cell:</b> '+gender+'<br />';
+        html += '<b>DOB:</b> '+gender+'<br />';
+        html += '<b>Email:</b> '+gender+'<br /><br />';
+        html += '<b>Location:</b><br />'+data.results[i].location.street+'<br />'+data.results[i].location.city+', '+data.results[i].location.state+'<br />';
+        html += '</div>';
+  
+        $('<div />').html(html).dialog({ title: name, modal: true, width: 500, height: 300 });
+      }
 
         //$(".cell").click(function()
         //{
