@@ -12,7 +12,7 @@
       .list
       {
         width: 500px;
-        margin: auto;
+        margin: 0 auto;
       }
       .cell
       {
@@ -101,7 +101,7 @@
       });
       function showDetail(index)
       {
-        alert('Made it to the function');
+        //alert('Made it to the function');
         //here I extract the index from the results I got from the AJAX call
         //I create some dynamic HTML here for the dialog
         var i = index;
@@ -112,7 +112,7 @@
         var cell = cells[i];
         var email = emails[i];
 
-        alert('Variables complete');
+        //alert('Variables complete');
 
         var html = '<div class="window" id="window-'+i+'">'
         html += '<div class="picture">';
@@ -127,7 +127,7 @@
         html += '</div>';
         html += '</div>';
 
-        alert('HTML complete');
+        //alert('HTML complete');
   
         $('<div />').html(html).dialog({ title: name, modal: true, width: 500, height: 300 });
       }
