@@ -30,6 +30,10 @@
         float:left;
         border: 1px solid red;
       }
+      .window
+      {
+        background:yellow !important
+      }
     </style>
 
     <script type="text/javascript">
@@ -57,6 +61,9 @@
             success: function(data) 
             {
               //log the data to the console
+              //str = str.toLowerCase().replace(/^[\u00C0-\u1FFF\u2C00-\uD7FF\w]|\s[\u00C0-\u1FFF\u2C00-\uD7FF\w]/g, function(letter) {
+                //return letter.toUpperCase();
+              //});
               console.log(data);
               for (var i=0;i<data.results.length;++i)
               {
