@@ -37,6 +37,12 @@
         float:left;
         margin: 0 auto;
       }
+      .thumbnail
+      {
+        width: 50px;
+        float:left;
+        margin: 0 auto;
+      }
     </style>
 
     <script type="text/javascript">
@@ -86,7 +92,7 @@
               for (var i=0;i<data.results.length;++i)
               {
                 var html = '<div onclick="showDetail('+i+')" class="cell" id="cell-'+i+'">';
-                html += '<div class="picture">';
+                html += '<div class="thumbnail">';
                 html += '<img src="'+data.results[i].picture.thumbnail+'" />';
                 html += '</div>';
                 html += '<div class = info>';
