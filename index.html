@@ -30,10 +30,6 @@
         width: 200px;
         float:left;
       }
-      .window
-      {
-        background:yellow !important
-      }
     </style>
 
     <script type="text/javascript">
@@ -86,7 +82,7 @@
                 html += '<img src="'+data.results[i].picture.thumbnail+'" />';
                 html += '</div>';
                 html += '<div class = info>';
-                html += data.results[i].name.title+' '+data.results[i].name.first+' '+data.results[i].name.last;
+                html += '<h3>'+data.results[i].name.title+' '+data.results[i].name.first+' '+data.results[i].name.last+'</h3>';
                 html += '<br />';
                 html += data.results[i].location.city+', '+data.results[i].location.state;
                 html += '</div>';
@@ -102,8 +98,7 @@
       function showDetail(index)
       {
         //alert('Made it to the function');
-        //here I extract the index from the results I got from the AJAX call
-        //I create some dynamic HTML here for the dialog
+
         var i = index;
         var name = names[i];
         var location = streets[i]+'<br />'+cities[i]+', '+states[i];
@@ -129,12 +124,12 @@
 
         //alert('HTML complete');
   
-        $('<div />').html(html).dialog({ title: name, modal: true, width: 500, height: 300 });
+        $('<div />').html(html).dialog({ title: name, modal: true, width: 500, height: 250 });
       }
     </script>
   </head>
   <body>
-    <h3>Unit 4 Coding Challenge</h3>
+    <h2>Unit 4 Coding Challenge</h2>
     <button id="get">Get (New)</button>
     <br />
     <div id='list'></div>
