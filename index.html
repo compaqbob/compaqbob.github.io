@@ -25,6 +25,11 @@
         float:left;
         text-align: center;
       }
+      .details
+      {
+        float:left;
+        text-align: center;
+      }
       .picture
       {
         width: 200px;
@@ -114,7 +119,7 @@
         html += '<div class="picture">';
         html += '<img src="'+largepictures[i]+'" />';
         html += '</div>';
-        html += '<div class = info>';
+        html += '<div class="details">';
         html += '<b>Gender:</b> '+gender+'<br />';
         html += '<b>Cell:</b> '+cell+'<br />';
         html += '<b>DOB:</b> '+dob+'<br />';
@@ -131,9 +136,9 @@
   </head>
   <body>
     <h2>Unit 4 Coding Challenge</h2>
-    <button id="get">Get (New)</button>
+    <button id='get'>Get (New)</button>
     <br />
-    <div id='list'></div>
+    <div class='list'></div>
     
 
   </body>
