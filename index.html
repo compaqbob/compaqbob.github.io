@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Matt Winkeler's Unit4 Coding Challenge</title>
+    <title>Matt Winkeler's Homepage</title>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
     <link type="text/css" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css" rel="stylesheet" />
@@ -47,108 +47,13 @@
       }
     </style>
 
-    <script type="text/javascript">
-      var data = {};
-      var names =[];
-      var smallpictures = [];
-      var largepictures = [];
-      var streets = [];
-      var cities = [];
-      var states = [];
-      var cells = [];
-      var emails = [];
-      var dobs = [];
-      var genders = [];
 
-      $(document).ready(function()
-      {
-        $("#get").click(function()
-        {
-          $( "div" ).remove( ".cell" );
-          //get the data         
-          $.ajax(
-          {
-            url: 'https://randomuser.me/api/?results=10',
-            dataType: 'json',
-            success: function(data) 
-            {
-              //log the data to the console
-              //str = str.toLowerCase().replace(/^[\u00C0-\u1FFF\u2C00-\uD7FF\w]|\s[\u00C0-\u1FFF\u2C00-\uD7FF\w]/g, function(letter) {
-                //return letter.toUpperCase();
-              //});
-              console.log(data);
-              for (var i=0;i<data.results.length;++i)
-              {
-                names[i] = data.results[i].name.title+' '+data.results[i].name.first+' '+data.results[i].name.last;
-                smallpictures[i] = data.results[i].picture.thumbnail;
-                largepictures[i] = data.results[i].picture.large;
-                streets[i] = data.results[i].location.street;
-                cities[i] = data.results[i].location.city;
-                states[i] = data.results[i].location.state;
-                cells[i] = data.results[i].cell;
-                emails[i] = data.results[i].email;
-                dobs[i] = data.results[i].dob;
-                genders[i] = data.results[i].gender;
-              }
-              //display the items
-              for (var i=0;i<data.results.length;++i)
-              {
-                var html = '<div onclick="showDetail('+i+')" class="cell" id="cell-'+i+'">';
-                html += '<div class="thumbnail">';
-                html += '<img src="'+data.results[i].picture.thumbnail+'" />';
-                html += '</div>';
-                html += '<div class = info>';
-                html += '<b><big>'+data.results[i].name.title+' '+data.results[i].name.first+' '+data.results[i].name.last+'</big></b>';
-                html += '<br />';
-                html += data.results[i].location.city+', '+data.results[i].location.state;
-                html += '</div>';
-                html += '</div>';
-
-                $('.list').append(html);
-              }
-            }
-          });
-        });
-        $("#cell").show(); 
-      });
-      function showDetail(index)
-      {
-        //alert('Made it to the function');
-
-        var i = index;
-        var name = names[i];
-        var location = streets[i]+'<br />'+cities[i]+', '+states[i];
-        var dob = dobs[i];
-        var gender = genders[i];
-        var cell = cells[i];
-        var email = emails[i];
-
-        //alert('Variables complete');
-
-        var html = '<div class="window" id="window-'+i+'">'
-        html += '<div class="picture">';
-        html += '<img src="'+largepictures[i]+'" />';
-        html += '</div>';
-        html += '<div class="details">';
-        html += '<b>Gender:</b> '+gender+'<br />';
-        html += '<b>Cell:</b> '+cell+'<br />';
-        html += '<b>DOB:</b> '+dob+'<br />';
-        html += '<b>Email:</b> '+email+'<br /><br />';
-        html += '<b>Location:</b><br />'+location+'<br />';
-        html += '</div>';
-        html += '</div>';
-
-        //alert('HTML complete');
-  
-        $('<div />').html(html).dialog({ title: name, modal: true, width: 600, height: 250 });
-      }
-    </script>
   </head>
   <body>
-    <center><big><b>Unit 4 Coding Challenge - </b></big><button id='get'>Load Users</button></center>
-    <br />
-    <div class='list'></div>
-    
-
+    <a href="">Download Resume</a>
+    <a href="Coding_Sample_Requiremenst.docx">Code Sample (Requirements)</a>
+    <a href="code_sample.html">Code Sample (Working Page)</a>
+    <a href="">Code Sample (Code)</a>
+    <a href="https://www.linkedin.com/in/matthewjwinkeler">LinkedIn Profile</a>
   </body>
 </html>
